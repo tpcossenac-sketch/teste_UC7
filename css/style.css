@@ -3,82 +3,92 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    color: inherit;
 }
 
-/* Corpo da página */
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #7ED321 100%);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #2E7D32 0%, #549657 50%, #7ED321 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
 }
+
+/* Header */
 
 header {
-    margin-left: 20px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.esfera {
-    margin-left: 20px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 10px;
-    height: 100px;
-    background-color: #006400;
-}
-
-/* Cabeçalho */
-.headerInicio {
-    height: 70px;
-    width: 100%;
-    background: #2d4d1f;
-    color: white;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
-.headerInicio img {
-    width: 80px;
-    height: 80px;
+header img {
+    width: 70px;
+    height: 70px;
 }
 
-/* Conteúdo principal */
+.headerInicio {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background: #245000;
+    color: white;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.headerInicio h2 {
+    font-size: 45px;
+}
+
+/* Esfera */
+.esfera img {
+    width: 75px;
+    height: 67px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.esfera h2 {
+    color: white;
+}
+
 main {
     flex: 1;
     padding: 20px;
 }
 
-/* Grid dos cards */
+/* Card */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     padding: 20px;
+    margin-left: 300px;
 }
 
-/* Cards */
 .card {
-    width: 250px;
-    height: 200px;
-    background: #ffffff;
-    color: white;
-    border-radius: 15px;
+    width: 400px;
+    height: 160px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    font-size: 28px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 .card img {
@@ -87,35 +97,26 @@ main {
     margin-right: 20px;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
 .card-link {
     display: flex;
     align-items: center;
-    /* alinha verticalmente */
     gap: 15px;
-    /* espaço entre ícone e texto */
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
+    color: black;
 }
 
-/* Rodapé Emergência */
+
 footer {
-    width: 90%;
-    height: 60px;
-    margin: 20px auto;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 30px;
+    width: 500px;
+    height: 100px;
+    margin: 150px auto 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    border-radius: 30px;
+    background: white;
+    color: black;
     font-size: 28px;
-    margin-top: 150px;
 }
 
 footer img {
@@ -123,58 +124,46 @@ footer img {
     height: 40px;
 }
 
-/* Container */
+.rodape {
+    width: 300px;
+    background: white;
+    color: black;
+}
+
 .container {
-    display: flex;
     width: 100%;
     min-height: calc(100vh - 140px);
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-/* Container */
-.container {
-    display: flex;
-    width: 100%;
-    min-height: calc(100vh - 140px);
-    justify-content: center;
-    align-items: center;
-}
-
-/* Formulário */
+/* LOGIN */
 .formulario {
     width: 600px;
-    background-color: #43A047;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(44, 85, 38, 0.493);
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 15px;
+    background: #43A047;
+    box-shadow: 0 0 20px rgba(44, 85, 38, 0.493);
 }
 
-.formulario h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
+.formulario h2,
+.formulario p {
+    color: white;
 }
 
 .formulario p {
-    color: #ffffff;
     margin-bottom: 25px;
 }
 
 .formulario label {
     width: 100%;
-    text-align: left;
     margin-bottom: 5px;
-    color: #ffffff;
-}
-
-.formulario label a {
-    color: #ffffff;
+    text-align: left;
 }
 
 .formulario input[type="email"],
@@ -196,114 +185,103 @@ footer img {
 }
 
 .opcoes a {
-    text-decoration: none;
-    color: #fff;
+    color: white;
 }
 
 .opcoes a:hover {
     text-decoration: underline;
 }
 
-/* Botões */
+/* Cadastro (Login) */
+.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cadastro label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cadastro a {
+    color: blue;
+}
+
+.cadastro a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÕES */
 button {
     width: 80%;
     padding: 10px;
     border: none;
     border-radius: 6px;
-    background-color: #fff;
-    color: #ffffff;
+    background: white;
+    color: black;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 button:hover {
-    background-color: #074e10;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
+    background: #1d3476;
+    color: white;
 }
 
 .entrar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 80px;
     padding: 4px;
     border: none;
     border-radius: 6px;
-    background-color: #1c6126;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 85px;
-}
-
-.entrar:hover {
-    background-color: #074e10;
-}
-
-.entrar a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    padding: 4px;
-    border: none;
-    border-radius: 6px;
-    background-color: #1c6126;
+    background: #1c6126;
     color: white;
     font-size: 18px;
     cursor: pointer;
 }
 
-/* CADASTRO */
-.container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
+/* Cadastro */
 .formulario_cadastro {
     width: 400px;
     display: flex;
     flex-direction: column;
-    background-color: #43A047;
     padding: 40px;
     border-radius: 15px;
+    background: #43A047;
     box-shadow: 0 0 20px rgba(44, 85, 38, 0.493);
 }
 
 .logo_login_cadastro {
     width: 250px;
     height: 100%;
-    display: flex;
     margin-bottom: 30px;
 }
 
 .formulario_cadastro h2 {
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-size: 30px;
     align-self: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
 }
 
 .formulario_cadastro p {
-    color: #666;
     margin-bottom: 25px;
+    color: #666;
 }
 
 .formulario_cadastro label {
     display: block;
-    margin-bottom: 5px;
     margin-top: 15px;
-    color: #ffffff;
+    margin-bottom: 5px;
+    color: white;
 }
 
+.formulario_cadastro input[type="text"],
 .formulario_cadastro input[type="email"],
 .formulario_cadastro input[type="password"],
-.formulario_cadastro input[type="text"],
 .formulario_cadastro input[type="date"],
 .formulario_cadastro input[type="tel"] {
     width: 100%;
@@ -315,66 +293,18 @@ button:hover {
 
 .botao_cadastro {
     width: 223px;
+    margin: 20px auto 0;
     padding: 10px;
     border: none;
     border-radius: 6px;
-    background-color: #1c6126;
+    background: #1c6126;
     color: white;
     font-size: 18px;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    margin-left: 50px;
-    margin-top: 20px;
 }
 
 .botao_cadastro:hover {
-    background-color: #074e10;
-}
-
-/* INICIO */
-
-/* Grid de cards */
-.grid-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-}
-
-.card {
-    width: 250px;
-    height: 200px;
-    background: #000;
-    color: white;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card:hover {
-    background: #222;
-    transform: scale(1.03);
-}
-
-/* Botão de emergência */
-.emergencia {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    background: #000;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.emergencia:hover {
-    background: #c62828;
+    background: #074e10;
 }
